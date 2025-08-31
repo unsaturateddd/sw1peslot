@@ -38,9 +38,10 @@
             color: #fff;
             display: flex;
             align-items: center;
-            font-family: 'Intro', Arial, sans-serif;
+            font-family: 'Intro', Arial, sans-serif;font-family: 'LuckiestGuy-Regular', cursive, sans-serif;
             box-sizing: border-box;
             font-size: 24px;
+            
         }
 
         header img {
@@ -696,137 +697,230 @@
       border-radius: 50%;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
     }
-    .back-button {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 12px 24px;
-        background: linear-gradient(135deg, #4a6bff 0%, #2541b2 100%);
-        color: white;
-        border: none;
-        border-radius: 50px;
-        font-size: 16px;
-        font-weight: 500;
-        cursor: pointer;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(37, 65, 178, 0.3);
-    }
-    
-    .back-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(37, 65, 178, 0.4);
-    }
-    
-    .back-button:active {
-        transform: translateY(0);
-    }
-    
-    .back-button::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        transition: 0.5s;
-    }
-    
-    .back-button:hover::before {
-        left: 100%;
-    }
-    
-    .back-icon {
-        transition: transform 0.3s ease;
-    }
-    
-    .back-button:hover .back-icon {
-        transform: translateX(-3px);
-    }
+    .tabcontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: center; /* Центрирование по вертикали */
+    min-height: calc(100vh - 120px); /* Учитываем высоту header и footer */
+    padding: 20px;
+    box-sizing: border-box;
+}
 
+.rectangle {
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.rectangle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.buttons-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Расположение в столбик */
+    align-items: center; /* Центрирование по горизонтали */
+    gap: 20px; /* Равное расстояние между всеми кнопками */
+    padding: 15px 0; /* Отступы сверху и снизу */
+    font-family: 'LuckiestGuy-Regular', sans-serif;
+}
+
+.lckyguy{
+    font-family: 'LuckiestGuy-Regular', cursive, sans-serif;
+}
+
+.button {
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    min-width: 120px;
+    margin: 5px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-primary {
+    background: linear-gradient(145deg, #4CAF50 0%, #2E7D32 100%);
+    color: white;
+}
+
+.button-primary:hover {
+    background: linear-gradient(145deg, #2E7D32 0%, #4CAF50 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button-secondary {
+    background: linear-gradient(145deg, #f44336 0%, #c62828 100%);
+    color: white;
+}
+
+.button-secondary:hover {
+    background: linear-gradient(145deg, #c62828 0%, #f44336 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .header h1 {
+        color: #fff;
+        font-size: 2.5rem;
+        text-shadow: 0 0 10px rgba(0, 150, 255, 0.7);
+        letter-spacing: 2px;
+        margin: 0;
+        padding: 10px 0;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    /* Стили для прямоугольников */
+    .rectangle, .winners-rectangle {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        padding: 20px;
+        width: 250px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+    
     .winners-rectangle {
         margin-top: 15px;
         max-height: 200px;
         overflow-y: auto;
     }
-    .back-button {
+    
+    /* Стили для кнопок */
+    .buttons-container {
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding: 4px 8px;
-        font-size: 12px;
-        border-radius: 4px;
-        background: #f0f0f0;
-        border: 1px solid #ccc;
+        gap: 15px;
+    }
+    
+    .button {
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 16px;
         cursor: pointer;
+        border: none;
+        transition: all 0.3s;
     }
-    .back-button svg {
-        width: 10px;
-        height: 10px;
-        margin-right: 4px;
+    
+    .button-primary {
+        background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+        color: white;
     }
-    .back-button:hover {
-        background: #e0e0e0; /* Эффект при наведении */
+    
+    .button-secondary {
+        background: linear-gradient(135deg, #2196F3 0%, #0b7dda 100%);
+        color: white;
     }
+    
+    /* Стили для списка выигрышей */
+    .winners-column {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .winner-item {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        color: #fff;
+    }
+    
+    .winner-row {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .winner-id {
+        color: #ffffff;
+    }
+    
+    .winner-amount {
+        color: #00ff73;
+    }
+    
+    .winner-mode {
+        color: #c0ff2e;
+    }
+    
+    .winner-time {
+        color: #aaa;
+        font-size: 12px;
+        text-align: right;
+    }
+    
+    /* Скрываем scrollbar */
+    .winners-rectangle::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+    @font-face {
+    font-family: 'LuckiestGuy-Regular';
+    src: url('sloti/LuckiestGuy-Regular.ttf') format('ttf'),
+         url('sloti/LuckiestGuy-Regular.ttf') format('ttf');
+        font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
   </style>
 </head>
 <body>
   <!-- Звездный фон -->
   <div class="stars" id="stars"></div>
 
-<div style="display: flex; justify-content: center; width: 100%;">
-    <button 
-        class="back-button" 
-        onclick="openGame('back')"
-        style="
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 12px;
-            font-size: 13px;
-            border-radius: 20px;
-            background: rgb(255, 0, 0);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: rgb(255, 255, 255);
-            cursor: pointer;
-            white-space: nowrap;
-            margin: 10px 0;
-            transition: all 0.2s ease;
-            backdrop-filter: blur(5px);
-            flex-shrink: 0; /* Важно: запрещаем сжатие */
-        "
-    >
-        <svg viewBox="0 0 24 24" width="14" height="14" style="margin-right: 5px;">
-            <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-        </svg>
-        Назад
-    </button>
-</div>
+  
 
-
-
-<div id="Games" class="tabcontent active">
-
-    <div class="row">
-        <div class="game">
-            <img src="1.png" alt="Mines Preview">
-            <div class="game-info">
-                <h3 id="game1-title">Mines</h3>
-                <button id="game1-button" onclick="openGame('mines')">Открыть</button>
+<div class="tabcontent active" id="Games">
+    <!-- Заголовок AKULA SIGNAL -->
+    <div class="header">
+        <h1>GameZone</h1>
+    </div>
+    
+    <!-- Основной прямоугольник с кнопками -->
+    <div style="display: flex; justify-content: center; width: 100%; margin-bottom: 20px;">
+        <div class="rectangle">
+            <h3 style="color: #fff; text-align: center;"></h3>
+            <div class="buttons-container">
+                <button class="button button-primary lckyguy" onclick="openGame('indx')">SLOTS</button>
             </div>
         </div>
-        
-        <!-- <div class="game">
-            <img src="10.png" alt="Aviator Preview">
-            <div class="game-info">
-                <h3 id="game10-title">Aviator</h3>
-                <button id="game10-button" onclick="openGame('aviator')">Открыть</button>
+    </div>
+    
+    <!-- Прямоугольник с выигрышами в столбик -->
+    <div style="display: flex; justify-content: center; width: 100%;">
+        <div class="winners-rectangle">
+            <div class="header">Последние выигрыши</div>
+            <div class="winners-column" id="winners-column">
+                <!-- Сюда будут добавляться выигрыши -->
             </div>
-        </div> -->
+        </div>
+    </div>
 </div>
-
 
 
 
@@ -835,11 +929,44 @@
 <audio id="aboutAudio" src="gif.mp3"></audio>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let gamesButton = document.querySelector('.tablinks.games-icon');
-        openTab(new Event('click'), 'Games', gamesButton);
-        showSlides(slideIndex);
-    });
+    function generateWinners() {
+        const modes = ['Fruit Party', 'Bananza', 'Dog House', 'Olymp', 'Sugar Rush', 'Mines'];
+        const columnElement = document.getElementById('winners-column');
+        
+        // Очищаем перед генерацией новых
+        columnElement.innerHTML = '';
+        
+        // Генерируем 15 рандомных выигрышей
+        for (let i = 0; i < 15; i++) {
+            const winnerId = Math.floor(1000 + Math.random() * 9000) + '********';
+            const amount = (Math.floor(Math.random() * 246) + 5) * 1000; // 5,000 - 250,000
+            const mode = modes[Math.floor(Math.random() * modes.length)];
+            const hours = Math.floor(Math.random() * 24);
+            const minutes = Math.floor(Math.random() * 60);
+            const time = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+            
+            const winnerElement = document.createElement('div');
+            winnerElement.className = 'winner-item';
+            winnerElement.innerHTML = `
+                <div class="winner-row">
+                    <span class="winner-id">${winnerId}</span>
+                    <span class="winner-amount">+${amount.toLocaleString()}₽</span>
+                </div>
+                <div class="winner-row">
+                    <span class="winner-mode">${mode}</span>
+                    <span class="winner-time">${time}</span>
+                </div>
+            `;
+            
+            columnElement.appendChild(winnerElement);
+        }
+        
+        // Обновляем каждые 30 секунд
+        setTimeout(generateWinners, 30000);
+    }
+    
+    // Запускаем генерацию выигрышей при загрузке
+    document.addEventListener('DOMContentLoaded', generateWinners);
 
 
 const translations = {
@@ -1661,6 +1788,10 @@ function openGame(game) {
     var isIOS = /iPhone|iPad|iPod/i.test(ua);
 
     var links = {
+        bananza: {
+            ios: 'banan/index.html',
+            other: 'banan/index.html'
+        },
         mines: {
             ios: 'mines/index.html',
             other: 'mines/index.html'
@@ -1737,13 +1868,17 @@ function openGame(game) {
             ios: 'jet/index.html',
             other: 'jet/index.html'
         },
-        back: {
-            ios: '..index.html',
-            other: '../index.html'
+        BURJRX: {
+            ios: 'BURJRX/index.html',
+            other: 'BURJRX/index.html'
         },
-        avia: {
-            ios: 'avia/index.html',
-            other: 'avia/index.html'
+        indx:{
+            ios: 'slot/index.html',
+            other: 'slot/index.html'
+        },
+        cr:{
+            ios: 'cr/index.html',
+            other: 'cr/index.html'
         }
         };
             var url = isIOS ? links[game].ios : links[game].other;
